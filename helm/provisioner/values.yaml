@@ -47,6 +47,12 @@ common:
   # resolved by the containers
   #
   mountDevVolume: true
+  #
+  # Map of label key-value pairs to apply to the PVs created by the
+  # provisioner. Uncomment to add labels to the list.
+  #
+  #labelsForPV:
+  #  pv-labels: can-be-selected
 #
 # Configure storage classes.
 #
@@ -147,6 +153,9 @@ daemonset:
     # requests:
     #   memory: "32Mi"
     #   cpu: "10m"
+  #
+  # If set to false, containers created by the Provisioner Daemonset will run without extra privileges.
+  privileged: true
 #
 # Configure Prometheus monitoring
 #
